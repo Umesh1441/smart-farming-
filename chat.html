@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>chat section</title>
+    <style>
+        .main_div {
+            margin: 3cm;
+            background-color: whitesmoke;
+            padding: 10px;
+            border-radius: 10px;
+            box-shadow: #73a9e9;
+        }
+
+        .cart_img {
+            height: 40px;
+            padding: 5px;
+            margin: 5px;
+            margin-bottom: 6px;
+        }
+
+        nav {
+            background-color: white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 9999;
+            font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+        }
+
+        .logo img {
+            height: 80px;
+        }
+
+        .menu {
+            border-radius: 3px;
+            background-color: wheat;
+            list-style: none;
+            display: flex;
+            align-items: center;
+        }
+
+        .menu li:last-child {
+            margin-right: 0;
+        }
+
+        .menu li a {
+            text-decoration: none;
+            padding: 10px;
+            color: #73a9e9;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+
+        .menu li a:hover {
+            color: #F5A623;
+        }
+
+
+
+        @media (max-width: 768px) {
+            .menu {
+                display: none;
+                flex-direction: column;
+                align-items: center;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background-color: #333;
+                z-index: 9998;
+                opacity: 0;
+                transition: opacity 0.3s ease;
+            }
+
+            .menu.show {
+                opacity: 1;
+            }
+        }
+
+        header {
+            background-color: rgb(37, 91, 31);
+            text-align: center;
+            margin: 5px;
+        }
+
+        .chat-section {
+            width: 400px;
+            height: 500px;
+            border: 1px solid #ccc;
+            overflow-y: scroll;
+        }
+
+        .chat-messages {
+            padding: 10px;
+        }
+
+        .chat-form {
+            display: flex;
+            margin-top: 10px;
+        }
+
+        .chat-form input[type="text"] {
+            flex: 1;
+            padding: 10px;
+        }
+
+        .chat-form button {
+            padding: 10px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        .chat-form button:hover {
+            background-color: #3e8e41;
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <div class="logo">
+            <img src="farmer.png" alt="Logo">
+        </div>
+        <ul class="menu">
+            <li><img class="cart_img" src="icon_login.png" alt=""></a></li>
+            <li><a href="first.html">Home</a></li>
+            <li><a href="marketpalce.html">market</a></li>
+            <li><a href="wheather.html">wheather</a></li>
+            <li><a href="#">chat</a></li>
+            <li><img class="cart_img" src="cart.png" alt=""></a></li>
+        </ul>
+    </nav>
+    <div class="chat-section">
+        <div class="chat-messages"></div>
+        <form class="chat-form">
+            <input type="text" placeholder="Type your message here" />
+            <button type="submit">Send</button>
+        </form>
+    </div>
+    <script>const chatForm = document.querySelector('.chat-form');
+        const chatInput = document.querySelector('.chat-form input[type="text"]');
+        const chatMessages = document.querySelector('.chat-messages');
+
+        chatForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            if (chatInput.value.trim() === '') return;
+            const message = document.createElement('div');
+            message.classList.add('message');
+            message.textContent = chatInput.value;
+            chatMessages.appendChild(message);
+            chatInput.value = '';
+            chatMessages.scrollTop = chatMessages.scrollHeight;
+        });
+    </script>
+</body>
+
+</html>

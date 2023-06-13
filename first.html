@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>farmer website</title>
+    <style>
+        .para {
+            font-size: 2cm;
+            font-style: italic;
+            color: coral;
+        }
+
+        .container {
+            width: 40%;
+            margin-left: 2cm;
+            background-color: whitesmoke;
+            border: -30px solid #ccc;
+            border-radius: 5px;
+            padding: 36px;
+            margin: auto;
+            width: 24%;
+            margin-top: 10%;
+        }
+
+        .container1 {
+            margin-top: 5cm;
+            width: 43%;
+            padding: 80px;
+        }
+
+        .main_container {
+            margin-top: 2cm;
+            display: flex;
+            border: none;
+
+        }
+
+        body {
+            background-image: url(main_page.jpg);
+        }
+
+        .cart_img {
+            height: 40px;
+            padding: 5px;
+            margin: 5px;
+            margin-bottom: 6px;
+        }
+
+        nav {
+            background-color: #59bd67;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 9999;
+            font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+        }
+
+        .logo img {
+            height: 80px;
+        }
+
+        .menu {
+            border-radius: 3px;
+            background-color: wheat;
+            padding: 0px;
+            margin-top: 6px;
+            list-style: none;
+            display: flex;
+            align-items: center;
+            text-decoration: solid;
+
+        }
+
+        .menu li:last-child {
+            margin-right: 0;
+        }
+
+        .menu li a {
+            text-decoration: none;
+            color: #73a9e9;
+            font-weight: bold;
+            transition: color 0.3s ease;
+            padding: 10px;
+        }
+
+        .menu li a:hover {
+            color: #F5A623;
+        }
+
+
+
+        @media (max-width: 768px) {
+            .menu {
+                display: none;
+                flex-direction: column;
+                align-items: center;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background-color: #333;
+                z-index: 9998;
+                opacity: 0;
+                transition: opacity 0.3s ease;
+            }
+
+            .menu.show {
+                opacity: 1;
+            }
+        }
+
+
+
+        input[type=text],
+        input[type=password] {
+            padding: 10px;
+            width: 100%;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            margin-top: 10px;
+            margin-bottom: 20px;
+            display: block;
+        }
+
+        button {
+            background-color: #4CAF50;
+            color: #fff;
+            padding: 7px 28px;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            float: right;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        .cancelbtn {
+            background-color: #f44336;
+            float: left;
+        }
+
+        .imgcontainer {
+            text-align: center;
+            margin: 24px 0 12px 0;
+            position: relative;
+        }
+
+        img.avatar {
+            width: 40%;
+            border-radius: 50%;
+        }
+
+        .container>p {
+            text-align: center;
+        }
+
+        span.psw {
+            padding: 53px;
+            margin: 5px;
+            float: right;
+            padding-top: 3px;
+        }
+
+
+        @media screen and (max-width: 600px) {
+            .container {
+                width: 80%;
+            }
+        }
+
+        #animated-paragraph {
+            font-size: 24px;
+            font-weight: bold;
+            color: blue;
+            position: relative;
+            animation: move 2s infinite;
+        }
+
+        @keyframes move {
+            0% {
+                left: 0;
+            }
+
+            50% {
+                left: 50px;
+            }
+
+            100% {
+                left: 0;
+            }
+        }
+
+        .quote {
+            color: black;
+            background-color: #f7f4ea00;
+            border: none;
+            padding: 10px;
+            font-style: italic;
+            text-align: center;
+            margin: 20px;
+        }
+
+        .quote p:first-of-type {
+            margin-top: 0;
+        }
+
+        .quote p:last-of-type {
+            margin-bottom: 0;
+            margin-top: 10px;
+            font-weight: bold;
+        }
+
+        .site-name {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 4rem;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+
+        .letter {
+            display: inline-block;
+            margin: 0.2rem;
+            animation: bounce 0.7s ease-in-out infinite alternate;
+        }
+
+        @keyframes bounce {
+            0% {
+                transform: translateY(0);
+            }
+
+            100% {
+                transform: translateY(-0.5rem);
+            }
+        }
+.container3{
+    margin-left: 4cm;
+}
+        .animate-charcter {
+            text-transform: uppercase;
+            background-image: linear-gradient(-225deg,
+                    #231557 0%,
+                    #44107a 29%,
+                    #ff1361 67%,
+                    #fff800 100%);
+            background-size: auto auto;
+            background-clip: border-box;
+            background-size: 200% auto;
+            color: #fff;
+            background-clip: text;
+            text-fill-color: transparent;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: textclip 2s linear infinite;
+            display: inline-block;
+            font-size: 80px;
+        }
+
+        @keyframes textclip {
+            to {
+                background-position: 200% center;
+            }
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="front">
+        <nav>
+            <div class="logo">
+                <img src="farmer.png" alt="Logo">
+            </div>
+            <div class="site-name">
+                <span class="letter">G</span>
+                <span class="letter">o</span>
+                <span class="letter">-</span>
+                <span class="letter">a</span>
+                <span class="letter">G</span>
+                <span class="letter">r</span>
+                <span class="letter">o</span>
+            </div>
+
+            <ul class="menu">
+                <li><a href="#">Home</a></li>
+                <!-- <li><img class="cart_img" src="icon_login.png" alt=""></a></li> -->
+                <!-- <li><a href="#">Home</a></li> -->
+                <li><a href="marketpalce.html">market</a></li>
+                <li><a href="soil.html">Soil analysis</a></li>
+                <li><a href="wheather.html">wheather</a></li>
+                <li><a href="ggov_pol.html">policies</a></li>
+                <li><img class="cart_img" src="icon_login.png" alt=""></a></li>
+                <li><img class="cart_img" src="cart.png" alt=""></a></li>
+
+
+            </ul>
+        </nav>
+        <div class="main_container">
+            <div class="container1">
+                <div class="quote">
+                    <p class="para">hi! welcome to our website</p>
+                    <h1 id="animated-paragraph">Farming is a profession of hope.</h1>
+                    <p>- Brian Brett</p>
+                </div>
+            </div>
+
+            <div class="container">
+                <form id="login-form" method="post">
+                    <div class="imgcontainer">
+                        <img src="login.jpg" alt="Avatar" class="avatar">
+                    </div>
+
+                    <div>
+                        <label for="username"><b>Username</b></label>
+                        <input type="text" placeholder="Enter Username" name="username" required>
+                    </div>
+
+                    <div>
+                        <label for="password"><b>Password</b></label>
+                        <input type="password" placeholder="Enter Password" name="password" required>
+                    </div>
+
+                    <button type="submit" id="login-btn">Login</button>
+                    <label>
+                        <input type="checkbox" checked="checked" name="remember"> Remember me
+                    </label>
+                    <span class="psw"><a href="#">Forgot password?</a></span>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="container3">
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <h3 class="animate-charcter"> Expert talk </h3>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>

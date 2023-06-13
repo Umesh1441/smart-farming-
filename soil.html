@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <title>Soil Analysis</title>
+    <link rel="stylesheet" href="API1.css">
+ <style>
+  label {
+   display: block;
+   margin-bottom: 10px;
+  }
+  input[type="text"], select {
+   padding: 5px;
+   margin-bottom: 10px;
+   border: 1px solid #ccc;
+   border-radius: 4px;
+   box-sizing: border-box;
+  }
+  button {
+   padding: 10px;
+   background-color: #4CAF50;
+   color: white;
+   border: none;
+   border-radius: 4px;
+   cursor: pointer;
+  }
+  button:hover {
+   background-color: #45a049;
+  }
+ </style>
+</head>
+<body>
+ <h1>Soil Analysis</h1>
+ <form>
+  <label for="ph">pH:</label>
+  <input type="text" id="ph" name="ph" placeholder="Enter pH">
+
+  <label for="nitrogen">Nitrogen:</label>
+  <input type="text" id="nitrogen" name="nitrogen" placeholder="Enter Nitrogen">
+
+  <label for="phosphorus">Phosphorus:</label>
+  <input type="text" id="phosphorus" name="phosphorus" placeholder="Enter Phosphorus">
+
+  <label for="potassium">Potassium:</label>
+  <input type="text" id="potassium" name="potassium" placeholder="Enter Potassium">
+
+  <button type="button" onclick="analyze()">Analyze</button>
+ </form>
+
+ <div id="results"></div>
+
+ <script src="API.js">
+  function analyze() {
+   // Get the values from the form
+   const phValue = document.getElementById("ph").value;
+   const nitrogenValue = document.getElementById("nitrogen").value;
+   const phosphorusValue = document.getElementById("phosphorus").value;
+   const potassiumValue = document.getElementById("potassium").value;
+
+   // Calculate the results
+   const totalNutrients = parseFloat(nitrogenValue) + parseFloat(phosphorusValue) + parseFloat(potassiumValue);
+   const percentNitrogen = (parseFloat(nitrogenValue) / totalNutrients) * 100;
+   const percentPhosphorus = (parseFloat(phosphorusValue) / totalNutrients) * 100;
+   const percentPotassium = (parseFloat(potassiumValue) / totalNutrients) * 100;
+
+   // Display the results
+   document.getElementById("results").innerHTML = `
+    <h2>Results</h2>
+    <p>pH: ${phValue}</p>
+    <p>Nitrogen: ${percentNitrogen.toFixed(2)}%</p>
+    <p>Phosphorus: ${percentPhosphorus.toFixed(2)}%</p>
+    <p>Potassium: ${percentPotassium.toFixed(2)}%</p>
+   `;
+  }
+ </script>
+</body>
+</html>

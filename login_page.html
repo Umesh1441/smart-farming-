@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Login</title>
+    <style>
+        body {
+            background-color: #f1f1f1;
+        }
+
+        .container {
+            background-color: #fff;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            padding: 20px;
+            margin: auto;
+            width: 50%;
+            margin-top: 10%;
+        }
+
+        input[type=text],
+        input[type=password] {
+            padding: 10px;
+            width: 100%;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            margin-top: 10px;
+            margin-bottom: 20px;
+            display: block;
+        }
+
+        button {
+            background-color: #4CAF50;
+            color: #fff;
+            padding: 7px 28px;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            float: right;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        .cancelbtn {
+            background-color: #f44336;
+            float: left;
+        }
+
+        .imgcontainer {
+            text-align: center;
+            margin: 24px 0 12px 0;
+            position: relative;
+        }
+
+        img.avatar {
+            width: 40%;
+            border-radius: 50%;
+        }
+
+        .container>p {
+            text-align: center;
+        }
+
+        span.psw {
+            padding: 53px;
+            margin: 5px;
+            float: right;
+            padding-top: 3px;
+        }
+        
+
+        @media screen and (max-width: 600px) {
+            .container {
+                width: 80%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <form id="login-form" method="post">
+            <div class="imgcontainer">
+                <img src="login.jpg" alt="Avatar" class="avatar">
+            </div>
+
+            <div>
+                <label for="username"><b>Username</b></label>
+                <input type="text" placeholder="Enter Username" name="username" required>
+            </div>
+
+            <div>
+                <label for="password"><b>Password</b></label>
+                <input type="password" placeholder="Enter Password" name="password" required>
+            </div>
+
+            <button type="submit" id="login-btn">Login</button>
+            <label>
+                <input type="checkbox" checked="checked" name="remember"> Remember me
+            </label>
+            <span class="psw"><a href="#">Forgot password?</a></span>
+        </form>
+    </div>
+
+    <script>
+        // handle form submission
+        document.getElementById("login-form").addEventListener("submit", function (event) {
+            event.preventDefault();
+            var username = document.getElementsByName("username")[0].value;
+            var password = document.getElementsByName("password")[0].value;
+            // here you can send the username and password to a server-side script to verify the credentials
+            // for this example, we will just display an alert with the input values
+            alert("Username: " + username + "\nPassword: " + password);
+        });
+    </script>
+
+</body>
+
+</html>
